@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container fadeIn">
     <header class="jumbotron">
       <h3>
         <strong>Welcome {{currentUser.first_name}}</strong>
