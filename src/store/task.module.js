@@ -25,10 +25,20 @@ export const task = {
             );
         },
 
-        findByTitle({ commit }, title) {
+        findByTitle(commit, title) {
             return TaskService.findByTitle(title).then(
                 task => {
-                    commit('showSnackbar', 'Task added!')
+                    return Promise.resolve(task);
+                },
+                error => {
+                    return Promise.reject(error);
+                }
+            );
+        },
+
+        create(commit, data) {
+            return TaskService.create(data).then(
+                task => {
                     return Promise.resolve(task);
                 },
                 error => {

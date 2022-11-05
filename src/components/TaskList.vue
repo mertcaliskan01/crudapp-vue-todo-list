@@ -1,12 +1,16 @@
 <template>
-  <div class="card fadeIn">
+  <div class="card fadeIn mt-5 p-5">
     <div class="card-body">
       <h5 class="card-title">Todo List</h5>
       <div class="list row">
-        <div class="col-md-1">
-          <a href="#" class="btn btn-success">Add</a>
+        <div class="col-md-2">
+          <router-link
+              :to="'/newTask'"
+              class="btn btn-success p-2"
+              >New Task</router-link
+            >
         </div>
-        <div class="col-md-11">
+        <div class="col-md-10">
           <div class="input-group mb-3">
             <input
               type="text"
@@ -26,7 +30,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 p-4">
           <h4>List</h4>
           <ul class="list-group">
             <li
@@ -44,7 +48,7 @@
             Remove All
           </button>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 p-4">
           <h4>Detail</h4>
           <div v-if="currentTask">
             <h4>Task</h4>
@@ -62,7 +66,7 @@
 
             <router-link
               :to="'/tasks/' + currentTask.id"
-              class="badge badge-warning"
+              class="badge badge-warning p-2"
               >Edit</router-link
             >
           </div>
@@ -154,4 +158,3 @@ export default {
   },
 };
 </script>
-

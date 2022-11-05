@@ -12,7 +12,7 @@ class UserService {
   }
 
   create(data) {
-    return axios.post(API_URL + 'register', data);
+    return axios.post(API_URL + 'tasks', data);
   }
 
   update(id, data) {
