@@ -4,6 +4,7 @@ import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
 // lazy-loaded
 const Profile = () => import("./components/Profile.vue")
+const TaskList = () => import("./components/TaskList.vue")
 
 const routes = [
   {
@@ -28,6 +29,12 @@ const routes = [
     name: "profile",
     // lazy-loaded
     component: Profile,
+  },
+  {
+    path: "/tasks",
+    name: "tasks",
+    // lazy-loaded
+    component: TaskList,
   },
 ];
 
