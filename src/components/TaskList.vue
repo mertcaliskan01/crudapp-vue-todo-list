@@ -77,7 +77,6 @@
 </template>
 
 <script>
-import TaskService from "../services/task.service";
 
 export default {
   name: "tutorials-list",
@@ -91,9 +90,7 @@ export default {
   },
   methods: {
     retrieveTutorials() {
-      console.log("retrieveTutorials");
-
-      TaskService.getAll().then(
+      this.$store.dispatch("task/getAll").then(
         (response) => {
           this.todoList = response.data;
         },
@@ -120,7 +117,7 @@ export default {
     },
 
     removeAllTasks() {
-      TaskService.deleteAll().then(
+      this.$store.dispatch("task/deleteAll").then(
         () => {
           this.refreshList();
         },
@@ -136,7 +133,7 @@ export default {
     },
 
     searchTitle() {
-      TaskService.findByTitle(this.title).then(
+      this.$store.dispatch("task/findByTitle", this.title).then(
         (response) => {
           this.todoList = response.data;
           this.setActiveTutorial(null);
