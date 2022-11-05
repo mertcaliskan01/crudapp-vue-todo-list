@@ -20,5 +20,9 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### INFO
+
+– store for Vuex (src/store)
+– router for Vue Router (src/router.js)
+– bootstrap with CSS
+– vue-fontawesome for icons
