@@ -1,5 +1,5 @@
 <template>
-  <div class="submit-form card fadeIn mt-5 p-5 card-content">
+  <div class="submit-form card fadeIn mt-5 p-5 main-content">
     <div v-if="!submitted">
       <Form @submit="saveTask" :validation-schema="schema">
         <div class="form-group ">
