@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <Field name="description" type="password" class="form-control" />
+          <Field name="description" type="text" class="form-control" />
           <ErrorMessage name="description" class="error-feedback text-danger" />
         </div>
 
