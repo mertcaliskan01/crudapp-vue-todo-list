@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentTask" class="edit-form">
+  <div v-if="currentTask" class="edit-form card fadeIn mt-5 p-5 main-content">
     <h4>Task</h4>
     <form>
       <div class="form-group">
@@ -28,22 +28,24 @@
     </form>
 
     <button
-      class="btn btn-primary mr-2"
+      class="btn btn-primary m-2"
       v-if="currentTask.completed"
       @click="updateCompleted(false)"
     >
-      UnPublish
+      Not Completed
     </button>
-    <button v-else class="btn btn-primary mr-2" @click="updateCompleted(true)">
-      Publish
+    <button v-else class="btn btn-primary m-2" @click="updateCompleted(true)">
+      Completed
     </button>
 
-    <button class="btn btn-danger mr-2" @click="deleteTask">Delete</button>
+    <button class="btn btn-danger m-2" @click="deleteTask">Delete</button>
 
-    <button type="submit" class="btn btn-success" @click="updateTask">
+    <button type="submit" class="btn btn-success m-2" @click="updateTask">
       Update
     </button>
-    <p>{{ message }}</p>
+
+    <h4 v v-if="success" class="text-success">{{ message }}</h4>
+    <h4 v v-else class="text-danger">{{ message }}</h4>
   </div>
 </template>
 
@@ -52,6 +54,7 @@ export default {
   name: "task",
   data() {
     return {
+      success: false,
       currentTask: null,
       message: "",
     };
@@ -78,9 +81,12 @@ export default {
         .dispatch("task/update", this.currentTask)
         .then((response) => {
           console.log(response.data);
+          this.success = true;
           this.message = "The task was updated successfully!";
         })
         .catch((e) => {
+          this.success = false;
+          this.message = "An error occurred please try again later";
           console.log(e);
         });
     },

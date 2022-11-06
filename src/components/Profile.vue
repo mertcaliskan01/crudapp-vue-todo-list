@@ -1,6 +1,6 @@
 <template>
-  <div class="container fadeIn">
-    <header class="jumbotron">
+  <div class="container mt-5 p-5 fadeIn main-content">
+    <header >
       <h3>
         <strong>Welcome {{currentUser.first_name}}</strong>
       </h3>
@@ -15,7 +15,7 @@
     </p>
     <p>
       <strong>Token:</strong>
-      {{currentUser.token.substring(0, 20)}} ... {{currentUser.token.substr(currentUser.token.length - 20)}}
+      {{currentUser.token.substring(0, 10)}} ... {{currentUser.token.substr(currentUser.token.length - 10)}}
     </p>
   </div>
 </template>

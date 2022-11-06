@@ -1,6 +1,6 @@
 <template>
-  <div class="container fadeIn">
-    <header class="jumbotron">
+  <div class="container mt-5 p-5 fadeIn main-content">
+    <header>
       <h3>{{ content }}</h3>
     </header>
   </div>

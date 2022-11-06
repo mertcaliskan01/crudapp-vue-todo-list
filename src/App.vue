@@ -75,6 +75,8 @@ export default {
 <style scoped>
 /* STRUCTURE */
 
+.main-content { background-color: #B0C4DE }
+
 .wrapper {
   display: flex;
   align-items: center;

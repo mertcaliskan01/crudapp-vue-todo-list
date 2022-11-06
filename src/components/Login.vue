@@ -1,21 +1,24 @@
 <template>
-  <div class="wrapper fadeInDown">
-    <img
-      id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
-    />
+  <div class=" fadeInDown">
+    <div class="wrapper">
+      <img
+        id="profile-img "
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+    </div>
+
     <div>
       <Form @submit="handleLogin" :validation-schema="schema">
         <div class="form-group">
           <label for="email">Email</label>
           <Field name="email" type="text" class="form-control" />
-          <ErrorMessage name="email" class="error-feedback" />
+          <ErrorMessage name="email" class="error-feedback text-danger" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <Field name="password" type="password" class="form-control" />
-          <ErrorMessage name="password" class="error-feedback" />
+          <ErrorMessage name="password" class="error-feedback text-danger" />
         </div>
 
         <div class="form-group">

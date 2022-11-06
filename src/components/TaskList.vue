@@ -1,16 +1,25 @@
 <template>
-  <div class="card fadeIn mt-5 p-5">
+  <div class="card fadeIn mt-5 p-5 main-content">
     <div class="card-body">
       <h5 class="card-title">Todo List</h5>
       <div class="list row">
         <div class="col-md-2">
-          <router-link
-              :to="'/newTask'"
-              class="btn btn-success p-2"
-              >New Task</router-link
-            >
+          <router-link :to="'/newTask'" class="btn btn-success"
+            >New Task</router-link
+          >
         </div>
-        <div class="col-md-10">
+
+        <div class="col-md-2">
+          <button
+            v-if="todoList.length"
+            class="btn btn-danger"
+            @click="removeAllTasks"
+          >
+            Remove All
+          </button>
+        </div>
+
+        <div class="col-md-8">
           <div class="input-group mb-3">
             <input
               type="text"
@@ -43,14 +52,10 @@
               {{ todo.title }}
             </li>
           </ul>
-
-          <button class="m-3 btn btn-sm btn-danger" @click="removeAllTasks">
-            Remove All
-          </button>
         </div>
         <div class="col-md-6 p-4">
           <h4>Detail</h4>
-          <div v-if="currentTask">
+          <div v-if="currentTask" class="p-4 custom-border">
             <h4>Task</h4>
             <div>
               <label><strong>Title:</strong></label> {{ currentTask.title }}
@@ -64,15 +69,18 @@
               {{ currentTask.completed ? "Completed" : "Not Completed" }}
             </div>
 
-            <router-link
-              :to="'/editTask/' + currentTask.id"
-              class="badge badge-warning p-2"
-              >Edit</router-link
-            >
+            <div class="d-flex justify-content-end">
+              <router-link
+                :to="'/editTask/' + currentTask.id"
+                class="btn btn-warning m-2"
+                >Edit</router-link
+              >
+            </div>
           </div>
+
           <div v-else>
             <br />
-            <p>Please click on a Tutorial...</p>
+            <p>Please click on a Task...</p>
           </div>
         </div>
       </div>
@@ -81,7 +89,6 @@
 </template>
 
 <script>
-
 export default {
   name: "tutorials-list",
   data() {
@@ -158,3 +165,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.custom-border {
+  border-style: solid;
+  border-color: #c8d4e4;
+  border-width: 2px;
+}
+</style>

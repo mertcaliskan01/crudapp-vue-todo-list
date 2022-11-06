@@ -1,8 +1,8 @@
 <template>
-  <div class="submit-form card fadeIn mt-5 p-5">
+  <div class="submit-form card fadeIn mt-5 p-5 card-content">
     <div v-if="!submitted">
       <Form @submit="saveTask" :validation-schema="schema">
-        <div class="form-group">
+        <div class="form-group ">
           <label for="title">New Task</label>
           <Field name="title" type="text" class="form-control" />
           <ErrorMessage name="title" class="error-feedback text-danger" />
@@ -15,14 +15,14 @@
 
         <div class="form-group">
           <button
-            class="btn btn-primary btn-block justify-content-end"
+            class="btn btn-primary btn-block"
             :disabled="loading"
           >
             <span
               v-show="loading"
               class="spinner-border spinner-border-sm"
             ></span>
-            <span>Login</span>
+            <span>Add</span>
           </button>
         </div>
 
@@ -34,7 +34,7 @@
       </Form>
     </div>
     <div v-if="submitted">
-      <h4>{{ successMessage }}</h4>
+      <h4 class="text-success">{{ successMessage }}</h4>
 
       <button class="btn btn-success" @click="newTask">New Task</button>
     </div>
@@ -93,7 +93,3 @@ export default {
   },
 };
 </script>
-
-
-<style scoped>
-</style>

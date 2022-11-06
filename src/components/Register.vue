@@ -11,22 +11,22 @@
           <div class="form-group">
             <label for="first_name">Name</label>
             <Field name="first_name" type="text" class="form-control" />
-            <ErrorMessage name="first_name" class="error-feedback" />
+            <ErrorMessage name="first_name" class="error-feedback text-danger" />
           </div>
           <div class="form-group">
             <label for="last_name">Surname</label>
             <Field name="last_name" type="text" class="form-control" />
-            <ErrorMessage name="last_name" class="error-feedback" />
+            <ErrorMessage name="last_name" class="error-feedback text-danger" />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <Field name="email" type="email" class="form-control" />
-            <ErrorMessage name="email" class="error-feedback" />
+            <ErrorMessage name="email" class="error-feedback text-danger" />
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <Field name="password" type="password" class="form-control" />
-            <ErrorMessage name="password" class="error-feedback" />
+            <ErrorMessage name="password" class="error-feedback text-danger" />
           </div>
 
           <div class="form-group">
