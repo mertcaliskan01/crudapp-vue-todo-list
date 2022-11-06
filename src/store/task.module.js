@@ -16,7 +16,7 @@ export const task = {
         },
 
         deleteAll() {
-            return TaskService.getAll().then(
+            return TaskService.deleteAll().then(
                 () => {
                 },
                 error => {
