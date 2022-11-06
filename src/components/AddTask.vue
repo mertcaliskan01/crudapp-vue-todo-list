@@ -1,42 +1,56 @@
 <template>
-  <div class="submit-form card fadeIn mt-5 p-5 main-content">
-    <div v-if="!submitted">
-      <Form @submit="saveTask" :validation-schema="schema">
-        <div class="form-group ">
-          <label for="title">New Task</label>
-          <Field name="title" type="text" class="form-control" />
-          <ErrorMessage name="title" class="error-feedback text-danger" />
+  <div class="container-fluid h-custom fadeInDown">
+    <div class="container py-5 h-100">
+      <div class="card bg-dark text-white" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center">
+          <h3>
+            <strong>New Task</strong>
+          </h3>
         </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <Field name="description" type="text" class="form-control" />
-          <ErrorMessage name="description" class="error-feedback text-danger" />
-        </div>
+      </div>
 
-        <div class="form-group">
-          <button
-            class="btn btn-primary btn-block"
-            :disabled="loading"
-          >
-            <span
-              v-show="loading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <span>Add</span>
-          </button>
-        </div>
+      <div class="card bg-dark text-white mt-5 p-5">
+        <div class="card-body">
+          <div v-if="!submitted">
+            <Form @submit="saveTask" :validation-schema="schema">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <Field name="title" type="text" class="form-control" />
+                <ErrorMessage name="title" class="error-feedback text-danger" />
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <Field name="description" type="text" class="form-control" />
+                <ErrorMessage
+                  name="description"
+                  class="error-feedback text-danger"
+                />
+              </div>
 
-        <div class="form-group">
-          <div v-if="message" class="alert alert-danger" role="alert">
-            {{ message }}
+              <div class="form-group mt-5">
+                <button class="btn btn-success btn-block" :disabled="loading">
+                  <span
+                    v-show="loading"
+                    class="spinner-border spinner-border-sm"
+                  ></span>
+                  <span>Add</span>
+                </button>
+              </div>
+
+              <div class="form-group">
+                <div v-if="message" class="alert alert-danger" role="alert">
+                  {{ message }}
+                </div>
+              </div>
+            </Form>
+          </div>
+          <div v-if="submitted">
+            <h4 class="text-success">{{ successMessage }}</h4>
+
+            <button class="btn btn-success" @click="newTask">New Task</button>
           </div>
         </div>
-      </Form>
-    </div>
-    <div v-if="submitted">
-      <h4 class="text-success">{{ successMessage }}</h4>
-
-      <button class="btn btn-success" @click="newTask">New Task</button>
+      </div>
     </div>
   </div>
 </template>

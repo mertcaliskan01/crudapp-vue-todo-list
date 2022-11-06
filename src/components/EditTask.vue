@@ -1,51 +1,81 @@
 <template>
-  <div v-if="currentTask" class="edit-form card fadeIn mt-5 p-5 main-content">
-    <h4>Task</h4>
-    <form>
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          v-model="currentTask.title"
-        />
-      </div>
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          type="text"
-          class="form-control"
-          id="description"
-          v-model="currentTask.description"
-        />
+  <div class="container-fluid h-custom fadeInDown">
+    <div class="container py-5 h-100">
+      <div class="card bg-dark text-white" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center">
+          <h3>
+            <strong>Edit Task</strong>
+          </h3>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentTask.completed ? "Completed" : "Not Completed" }}
+      <div class="card bg-dark text-white mt-5 p-5">
+        <div class="card-body">
+          <div v-if="currentTask" class="edit-form">
+            <h4>Task</h4>
+            <form>
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  v-model="currentTask.title"
+                />
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  v-model="currentTask.description"
+                />
+              </div>
+
+              <div class="form-group d-flex justify-content-around">
+
+                <div class="form-check form-switch checkbox-xl">
+
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="flexSwitchCheckDefault"
+                    v-model="currentTask.completed"
+                  />
+                  
+                  <label
+                    class="form-check-label ml-4"
+                    for="flexSwitchCheckDefault"
+                    >{{
+                      currentTask.completed ? " Completed" : " Not Completed"
+                    }}</label
+                  >
+                </div>
+                
+              </div>
+            </form>
+
+            <div class="d-flex justify-content-around">
+              <button class="btn btn-danger m-2" @click="deleteTask">
+                Delete
+              </button>
+
+              <button
+                type="submit"
+                class="btn btn-success m-2"
+                @click="updateTask"
+              >
+                Update
+              </button>
+            </div>
+
+            <h4 v v-if="success" class="text-success">{{ message }}</h4>
+            <h4 v v-else class="text-danger">{{ message }}</h4>
+          </div>
+        </div>
       </div>
-    </form>
-
-    <button
-      class="btn btn-primary m-2"
-      v-if="currentTask.completed"
-      @click="updateCompleted(false)"
-    >
-      Not Completed
-    </button>
-    <button v-else class="btn btn-primary m-2" @click="updateCompleted(true)">
-      Completed
-    </button>
-
-    <button class="btn btn-danger m-2" @click="deleteTask">Delete</button>
-
-    <button type="submit" class="btn btn-success m-2" @click="updateTask">
-      Update
-    </button>
-
-    <h4 v v-if="success" class="text-success">{{ message }}</h4>
-    <h4 v v-else class="text-danger">{{ message }}</h4>
+    </div>
   </div>
 </template>
 
@@ -72,8 +102,8 @@ export default {
         });
     },
 
-    updateCompleted(status) {
-      this.currentTask.completed = status;
+    updateCompleted() {
+      this.currentTask.completed = !this.currentTask.completed;
     },
 
     updateTask() {
@@ -109,4 +139,3 @@ export default {
   },
 };
 </script>
-
