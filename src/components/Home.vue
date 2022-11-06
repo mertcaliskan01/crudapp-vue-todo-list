@@ -1,8 +1,14 @@
 <template>
-  <div class="container mt-5 p-5 fadeIn main-content">
-    <header>
-      <h3>{{ content }}</h3>
-    </header>
+  <div class="container-fluid h-custom">
+    <div class="container py-5 h-100">
+      <div class="card bg-dark text-white fadeInDown" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center ">
+          <h3>
+                <strong>{{ content }}</strong>
+              </h3>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
