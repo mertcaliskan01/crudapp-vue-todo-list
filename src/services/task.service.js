@@ -1,34 +1,33 @@
-import axios from 'axios';
+import http from "./http-common";
 
-const API_URL = 'http://localhost:8080/api/';
 
 class UserService {
   getAll() {
-    return axios.get(API_URL + 'tasks');
+    return http.get('api/tasks');
   }
 
   get(id) {
-    return axios.get(API_URL + `tasks/${id}`);
+    return http.get(`api/tasks/${id}`);
   }
 
   create(data) {
-    return axios.post(API_URL + 'tasks', data);
+    return http.post('api/tasks', data);
   }
 
   update(id, data) {
-    return axios.post(API_URL + `tasks/${id}`, data);
+    return http.put(`api/tasks/${id}`, data);
   }
 
   delete(id) {
-    return axios.delete(API_URL + `tasks/${id}`);
+    return http.delete(`api/tasks/${id}`);
   }
 
   deleteAll() {
-    return axios.delete(API_URL + `tasks/`);
+    return http.delete(`api/tasks/`);
   }
 
   findByTitle(title) {
-    return axios.get(API_URL + `tasks?title=${title}`);
+    return http.get(`api/tasks?title=${title}`);
   }
 
 

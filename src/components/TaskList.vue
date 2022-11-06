@@ -61,11 +61,11 @@
             </div>
             <div>
               <label><strong>Status:</strong></label>
-              {{ currentTask.published ? "Completed" : "Pending" }}
+              {{ currentTask.completed ? "Completed" : "Not Completed" }}
             </div>
 
             <router-link
-              :to="'/tasks/' + currentTask.id"
+              :to="'/editTask/' + currentTask.id"
               class="badge badge-warning p-2"
               >Edit</router-link
             >
