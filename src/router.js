@@ -1,12 +1,12 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "./components/Home.vue";
-import Login from "./components/Login.vue";
-import Register from "./components/Register.vue";
+import Login from "./components/auth/Login.vue";
+import Register from "./components/auth/Register.vue";
 // lazy-loaded
 const Profile = () => import("./components/Profile.vue")
-const TaskList = () => import("./components/TaskList.vue")
-const TaskAdd = () => import("./components/AddTask.vue")
-const TaskEdit = () => import("./components/EditTask.vue")
+const TaskList = () => import("./components/todo/TaskList.vue")
+const TaskAdd = () => import("./components/todo/AddTask.vue")
+const TaskEdit = () => import("./components/todo/EditTask.vue")
 
 const routes = [
   {
