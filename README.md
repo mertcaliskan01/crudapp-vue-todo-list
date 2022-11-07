@@ -1,5 +1,16 @@
 # Todo App
 
+
+
+................................|￣￣￣￣￣￣￣￣|   
+................................|...😎.APP.🙌....|   
+................................|_______________ |   
+............................(\\__/)....||           
+............................(•ㅅ•)...||             
+............................/|---|.づ              
+...............................|.|     
+
+
 ## Project setup
 ```
 npm install
@@ -14,11 +25,18 @@ npm run serve
 ### INFO
 
 – store for Vuex (src/store)
+
 – router for Vue Router (src/router.js)
+
 – bootstrap with CSS
+
 – vue-fontawesome for icons
 
+- axios HTTP Client for node.js and the browser. 
 
+- vee-validate handles complex validations
+
+- Yup is a JavaScript schema builder for value parsing and validation. 
 
 ## Login Page
 ![login](https://user-images.githubusercontent.com/47431669/200273738-4ba22394-2b33-498a-93ec-886c8b6716b0.png)
