@@ -90,14 +90,9 @@ export default {
           this.submitted = true;
           this.loading = false;
         },
-        (error) => {
+        () => {
           this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+          this.message = "An error occurred please try again later";
         }
       );
     },

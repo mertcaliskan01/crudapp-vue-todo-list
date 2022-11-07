@@ -122,14 +122,9 @@ export default {
         () => {
           this.$router.push("/profile");
         },
-        (error) => {
+        () => {
           this.loading = false;
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+          this.message = "Your account or password is incorrect.";
         }
       );
     },

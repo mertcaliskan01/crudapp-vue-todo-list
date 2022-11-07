@@ -165,15 +165,8 @@ export default {
           this.successful = true;
           this.loading = false;
         },
-        (error) => {
-          this.message =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-          this.successful = false;
-          this.loading = false;
+        () => {
+          this.message = "An error occurred please try again later";
         }
       );
     },
