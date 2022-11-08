@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid h-custom fadeInDown">
-    <div class="container py-5 h-100">
+  <div class="container-fluid ">
+    <div class="container py-5  fadeInDown">
       <div class="card bg-dark text-white" style="border-radius: 1rem">
         <div class="card-body p-5 text-center">
           <h3>
@@ -8,7 +8,6 @@
           </h3>
         </div>
       </div>
-
       <div class="card bg-dark mt-5 p-5">
         <div class="card-body">
           <div class="list row">

@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid h-custom">
-    <div class="container py-5 h-100">
-      <div class="card bg-dark text-white fadeInDown" style="border-radius: 1rem">
-        <div class="card-body p-5 text-center ">
+  <div class="container-fluid fadeInDown">
+    <div class="container py-5">
+      <div class="card bg-dark text-white" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center">
           <div>
             <header>
               <h3>

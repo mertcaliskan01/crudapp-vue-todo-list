@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center">
       <div class="col-md-8 col-lg-6 col-xl-4">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -9,13 +9,12 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 wrapper fadeInDown">
-        <div class="container py-5 h-100">
+        <div class="container py-5">
           <div class="card bg-dark text-white" style="border-radius: 1rem">
             <div class="card-body p-5 text-center">
-              <div class="mb-md-5 mt-md-4 pb-5">
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">
-                  Please enter your login and password!
+                  Please enter your email and password!
                 </p>
                 <div>
                   <Form @submit="handleLogin" :validation-schema="schema">
@@ -64,7 +63,6 @@
                     </div>
                   </Form>
                 </div>
-              </div>
 
               <div>
                 <p class="mb-0">

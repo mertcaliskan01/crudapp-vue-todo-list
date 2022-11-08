@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="container-fluid ">
+    <div class="row d-flex justify-content-center align-items-center">
       <div class="col-md-8 col-lg-6 col-xl-4">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -9,10 +9,9 @@
         />
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 wrapper fadeInDown">
-        <div class="container py-5 h-100">
+        <div class="container ">
           <div class="card bg-dark text-white" style="border-radius: 1rem">
             <div class="card-body p-5 text-center">
-              <div class="mb-md-5 mt-md-4 pb-5">
                 <h2 class="fw-bold mb-2 text-uppercase mb-5">Sign Up</h2>
                 <div>
                   <Form @submit="handleRegister" :validation-schema="schema">
@@ -62,7 +61,7 @@
                         />
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group mt-2">
                         <button
                           class="btn btn-primary btn-block"
                           :disabled="loading"
@@ -85,7 +84,6 @@
                     {{ message }}
                   </div>
                 </div>
-              </div>
               <div>
                 <p class="mb-0">
                   <router-link :to="'/login'" class="text-white-50 fw-bold"
@@ -107,6 +105,7 @@ import * as yup from "yup";
 
 export default {
   name: "Register",
+
   components: {
     Form,
     Field,
