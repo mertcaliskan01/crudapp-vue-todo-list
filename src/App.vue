@@ -45,7 +45,9 @@
 
     <div class="vh-100 gradient-custom" >
       <router-view />
-    </div>
+      <footer-section />
+    </div >
+
   </div>
 </template>
 
@@ -67,6 +69,9 @@ export default {
       this.$store.dispatch("auth/logout");
       this.$router.push("/login");
     },
+  },
+  components: {
+    "footer-section": require("./components/Footer.vue").default,
   },
 };
 </script>
