@@ -1,13 +1,8 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="/" class="navbar-brand">Todo List</a>
+      <a href="/" class="navbar-brand">Home</a>
       <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
-          </router-link>
-        </li>
         <li v-if="showTaskList" class="nav-item">
           <router-link to="/tasks" class="nav-link"
             ><font-awesome-icon icon="tasks" /> TodoList</router-link
