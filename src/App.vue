@@ -28,8 +28,8 @@
           </li>
         </ul>
 
-        <div class="form-inline my-2 my-lg-0">
-          <div v-if="!currentUser" class="navbar-nav ml-auto">
+        <div class="form-inline ">
+          <div v-if="!currentUser" class="navbar-nav ">
             <li class="nav-item">
               <router-link to="/register" class="nav-link">
                 <font-awesome-icon icon="user-plus" /> Sign Up
@@ -42,7 +42,7 @@
             </li>
           </div>
 
-          <div v-if="currentUser" class="navbar-nav ml-auto">
+          <div v-if="currentUser" class="navbar-nav ">
             <li class="nav-item">
               <router-link to="/profile" class="nav-link">
                 <font-awesome-icon icon="user" />
@@ -56,6 +56,7 @@
             </li>
           </div>
         </div>
+        
       </div>
     </nav>
 
