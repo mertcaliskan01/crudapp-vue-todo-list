@@ -8,9 +8,14 @@
           </h3>
         </div>
       </div>
-      <div class="card bg-dark mt-5 p-2">
+      <div class="card bg-dark mt-3 p-2">
         <div class="card-body">
-          <div class="row row text-center">
+          <div class="row text-center">
+            <div class="col-sm-3 p-2">
+              <router-link :to="'/newTask'" class="btn btn-success"
+                >New Task</router-link
+              >
+            </div>
             <div class="col-sm-6 p-2">
               <div class="input-group mb-3">
                 <input
@@ -30,11 +35,6 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <router-link :to="'/newTask'" class="btn btn-success"
-                >New Task</router-link
-              >
             </div>
             <div class="col-sm-3 p-2">
               <button
@@ -57,9 +57,14 @@
                   :key="index"
                   @click="setActiveTutorial(todo, index)"
                 >
-                  {{ todo.title }}
-
-                  <font-awesome-icon v-if="todo.completed" icon="check" />
+                  <div class="row">
+                    <div class="col">
+                      {{ todo.title }}
+                    </div>
+                    <div class="col-2">
+                      <font-awesome-icon v-if="todo.completed" icon="check" />
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>

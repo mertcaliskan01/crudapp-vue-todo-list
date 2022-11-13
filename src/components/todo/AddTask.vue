@@ -1,15 +1,15 @@
 <template>
-  <div class="container-fluid fadeInDown ">
-    <div class="container py-5">
+  <div class="container-fluid fadeInDown">
+    <div class="container py-3">
       <div class="card bg-dark text-white" style="border-radius: 1rem">
-        <div class="card-body p-5 text-center">
+        <div class="card-body p-3 text-center">
           <h3>
             <strong>New Task</strong>
           </h3>
         </div>
       </div>
 
-      <div class="card bg-dark text-white mt-5 p-5">
+      <div class="card bg-dark text-white mt-3 p-5">
         <div class="card-body">
           <div v-if="!submitted">
             <Form @submit="saveTask" :validation-schema="schema">
@@ -44,8 +44,15 @@
               </div>
             </Form>
           </div>
-          <div v-if="submitted">
-            <h4 class="text-success">{{ successMessage }}</h4>
+          <div v-if="submitted" class="d-flex justify-content-around">
+            <h3 class="text-success">
+              <strong> {{ successMessage }}</strong>
+            </h3>
+          </div>
+          <div v-if="submitted" class="d-flex justify-content-around">
+            <button class="btn btn-primary" @click="showTasks">
+              Todo List
+            </button>
 
             <button class="btn btn-success" @click="newTask">New Task</button>
           </div>
@@ -98,6 +105,10 @@ export default {
     },
     newTask() {
       this.submitted = false;
+    },
+
+    showTasks() {
+      this.$router.push({ name: "tasks" });
     },
   },
 };
