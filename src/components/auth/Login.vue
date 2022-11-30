@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid">
     <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-md-8 col-lg-6 col-xl-4">
+      <div class="col-3  col-md-4 ">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
           class="img-fluid"
           alt="Sample image"
         />
       </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 wrapper fadeInDown">
+      <div class="col-12  col-md-6 wrapper fadeInDown">
         <div class="container py-5">
           <div class="card bg-dark text-white" style="border-radius: 1rem">
             <div class="card-body p-5 text-center">

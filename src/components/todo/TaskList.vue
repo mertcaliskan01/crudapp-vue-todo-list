@@ -17,7 +17,7 @@
               >
             </div>
             <div class="col-sm-6 p-2">
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <input
                   type="text"
                   class="form-control"
@@ -62,7 +62,7 @@
                       {{ todo.title }}
                     </div>
                     <div class="col-2">
-                      <font-awesome-icon v-if="todo.completed" icon="check" />
+                      <font-awesome-icon v-if="todo.completed" icon="check" class="fa-lg"/>
                     </div>
                   </div>
                 </li>

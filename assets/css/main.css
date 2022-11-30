@@ -130,6 +130,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    color: rgb(0, 0, 0);
+    background-color: #555b66;
+    color: white;
     text-align: center;
  }
