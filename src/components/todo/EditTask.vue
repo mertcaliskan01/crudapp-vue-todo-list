@@ -34,16 +34,14 @@
               </div>
 
               <div class="form-group d-flex justify-content-around">
-
                 <div class="form-check form-switch checkbox-xl">
-
                   <input
                     class="form-check-input"
                     type="checkbox"
                     id="flexSwitchCheckDefault"
                     v-model="currentTask.completed"
                   />
-                  
+
                   <label
                     class="form-check-label ml-4"
                     for="flexSwitchCheckDefault"
@@ -52,7 +50,7 @@
                     }}</label
                   >
                 </div>
-                
+
               </div>
             </form>
 
@@ -70,8 +68,20 @@
               </button>
             </div>
 
-            <h4 v v-if="success" class="text-success">{{ message }}</h4>
-            <h4 v v-else class="text-danger">{{ message }}</h4>
+            <div class="text-center">
+              <div v-if="success">
+                <h4 class="text-success">{{ message }}</h4>
+                <button
+                  v-if="success"
+                  class="btn btn-primary"
+                  @click="showTasks"
+                >
+                  Todo List
+                </button>
+              </div>
+
+              <h4 v-else class="text-danger">{{ message }}</h4>
+            </div>
           </div>
         </div>
       </div>
@@ -131,6 +141,9 @@ export default {
         .catch((e) => {
           console.log(e);
         });
+    },
+    showTasks() {
+      this.$router.push({ name: "tasks" });
     },
   },
   mounted() {

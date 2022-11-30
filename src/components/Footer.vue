@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer p-3">
+  <footer class="footer p-1">
     {{ new Date().getFullYear() }}
   </footer>
 </template>

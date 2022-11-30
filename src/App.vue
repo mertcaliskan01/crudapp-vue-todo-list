@@ -50,7 +50,7 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="logOut">
+              <a class="nav-link" type="button" @click.prevent="logOut">
                 <font-awesome-icon icon="sign-out-alt" /> LogOut
               </a>
             </li>
