@@ -1,15 +1,15 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div class="gradient-custom">
+  <div>
     <div class="sidebar">
       <div class="chip">
         <img src="../assets/logo.png" alt="Person" />
-        Superpeer
+        Mtcn
       </div>
 
       <div class="chip-card">
         <img src="../assets/avatar/avatar_01.png" alt="Person" />
-        Jane Doe
+        Mert Çalışkan
       </div>
 
       <a class="active" href="/"><i class="fa fa-fw fa-phone"></i> Home</a>
@@ -35,7 +35,7 @@
       <a href="/"><i class="fa fa-fw fa-home"></i> Logout</a>
     </div>
 
-    <div class="content">
+    <div class="sidebar-content">
       <div class="container">
         <h3>{{ this.title }}</h3>
 

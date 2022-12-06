@@ -94,8 +94,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.top-bar{
-  background: #E91E63;
-}
-
 </style>
