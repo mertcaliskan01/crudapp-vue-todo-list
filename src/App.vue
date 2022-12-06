@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="nav-bar navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
         type="button"
@@ -92,4 +92,10 @@ export default {
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.top-bar{
+  background: #E91E63;
+}
+
+</style>

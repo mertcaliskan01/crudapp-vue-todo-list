@@ -198,6 +198,8 @@ export default {
   },
 };
 </script>
+
+
 <style scoped>
 .custom-border {
   border-style: solid;

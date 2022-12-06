@@ -1,12 +1,22 @@
-body {
-  margin: 0;
-  font-family: "Lato", sans-serif;
-}
+$light-gray: #f3f3f3;
+$gray: #ebeaea;
+$dark-gray: #494949;
+$blue: rgb(43, 82, 187);
+$white:#ffffff;
+
+.gradient-custom {
+  background: $gray;  
+  }
+
 
 .sidebar {
-  width: 250px;
-  background-color: #f1f1f1;
-  height: 100%;
+  width: 200px;
+  position: fixed;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: $gray;
+
   a {
     display: block;
     color: black;
@@ -16,56 +26,125 @@ body {
   }
 
   h5 {
-    padding: 4px;
+    padding: 2px;
+    margin: 5px;
     padding-left: 16px;
     color: grey;
+    border-bottom: 1px solid gray;
+  }
+
+  i {
+    margin-right: 4px;
   }
 
   a.active {
     background-color: #91b7da;
-    color: rgb(43, 82, 187);
+    color: $blue;
   }
 
   a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    background-color: #91b7da;
+    color: $blue;
   }
 }
 
-div.content {
-  margin: 16px;;
+.content {
+  margin-left: 200px;
+  background-color: $white;
+
+  h3{
+    margin-top: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .page-contain {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .data-card {
+      flex-direction: column;
+      border-radius: 10px;
+      border: solid $gray 2px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      padding: 1.75em 1.5em;
+      margin: 15px;
+
+      h3 {
+        color: $dark-gray;
+        font-size: 1.5em;
+        font-weight: 600;
+        line-height: 1;
+        padding-bottom: 0.5em;
+        margin: 0 0 0.142857143em;
+        border-bottom: 2px solid $gray;
+        transition: color 0.45s ease, border 0.45s ease;
+      }
+
+      h4 {
+        color: $dark-gray;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        margin: 1.777777778em;
+        transition: color 0.45s ease;
+      }
+
+      p {
+        color: $dark-gray;
+        font-weight: 600;
+        line-height: 1.8;
+      }
+    }
+  }
 }
 
-/*
 @media screen and (max-width: 700px) {
   .sidebar {
+    position: relative;
     width: 100%;
     height: auto;
-    position: relative;
   }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
   .sidebar a {
-    text-align: center;
-    float: none;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  div.content {
+    margin-left: 0;
   }
 }
-*/
 
+@media screen and (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .sidebar a {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
 
 .chip {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   padding-left: 25px;
   margin-top: 15px;
   margin-left: 15px;
   height: 50px;
   font-size: 16px;
   line-height: 50px;
-  border-radius: 25px;
-  background-color: #f1f1f1;
   img {
     float: left;
     margin: 0 10px 0 -25px;
@@ -76,13 +155,12 @@ div.content {
 }
 
 .chip-card {
-  width: 80%;
-  display: inline-block;
-  padding-left: 15px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-left: 25px;
-  margin-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8px;
+  margin: 8px;
   border-radius: 15px;
   background-color: #ffffff;
   img {
@@ -91,13 +169,6 @@ div.content {
     border-radius: 50%;
   }
 }
-
-.nav-bar{
-  top: 0;
-  position: fixed;
-}
-
-
 
 /* Checkbox */
 
@@ -125,97 +196,20 @@ div.content {
   height: 30px;
 }
 
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-.page-contain {
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  border: .75em solid white;
-  padding: 2em;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.data-card {
-  flex-direction: column;
-  min-height: 20.75em;
-  border-radius: 15px;
-  border: solid #627084;
-  background: rgb(255, 255, 255);
-  margin: 1em;
-  padding: 2.75em 2.5em;
-  transition: transform .45s ease, background .45s ease;
-  
-  h3 {
-    color: #2E3C40;
-    font-size: 3.5em;
-    font-weight: 600;
-    line-height: 1;
-    padding-bottom: .5em;
-    margin: 0 0 0.142857143em;
-    border-bottom: 2px solid #627084;
-    transition: color .45s ease, border .45s ease;
-  }
-
-  h4 {
-    color: #627084;
-    text-transform: uppercase;
-    font-size: 1.125em;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    margin: 0 0 1.777777778em;
-    transition: color .45s ease;
-  }
-
-  p {
-    opacity: 0;
-    color: #FFFFFF;
-    font-weight: 600;
-    line-height: 1.8;
-    margin: 0 0 1.25em;
-    transform: translateY(-1em);
-    transition: opacity .45s ease, transform .5s ease;
-  }
-
-  .link-text {
-    display: block;
-    color: #627084;
-    font-size: 1.125em;
-    font-weight: 600;
-    line-height: 1.2;
-    margin: auto 0 0;
-    transition: color .45s ease;
-
-    svg {
-      margin-left: .5em;
-      transition: transform .6s ease;
-      
-      path {
-        transition: fill .45s ease;
-      }
-    }
-  }
-  
-
-}
-
 @keyframes point {
   0% {
-   transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(.125em);
+    transform: translateX(0.125em);
   }
 }
 
+
+.btn-right{
+  float: right;
+  padding: 10px;
+}
 
 
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
@@ -223,3 +217,4 @@ div.content {
 @import "../../node_modules/bootstrap-vue/src/index.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
