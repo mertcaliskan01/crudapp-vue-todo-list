@@ -1,15 +1,20 @@
 <template>
-  <div class="container-fluid fadeInDown">
-    <div class="container py-3">
-      <div class="card bg-dark text-white" style="border-radius: 1rem">
-        <div class="card-body p-3 text-center">
-          <h3>
-            <strong>New Task</strong>
-          </h3>
+  <div class="content">
+    <div class="chip">
+      <img src="../../assets/logo.png" alt="Person" />
+      Mtcn
+    </div>
+    <div id="custom-flex" class="container">
+      <div class="data-card">
+        <div class="card-body chip-card-vertical">
+          <img src="../../assets/avatar/avatar_01.png" alt="Person" />
+          <strong>Mert Çalışkan</strong>
+          <p>Software Developer</p>
+          <strong>Count</strong>
+          <p>15</p>
         </div>
       </div>
-
-      <div class="card bg-dark text-white mt-3 p-5">
+      <div class="data-card">
         <div class="card-body">
           <div v-if="!submitted">
             <Form @submit="saveTask" :validation-schema="schema">

@@ -6,8 +6,7 @@ $white:#ffffff;
 
 .gradient-custom {
   background: $gray;  
-  }
-
+}
 
 .sidebar {
   width: 200px;
@@ -48,8 +47,9 @@ $white:#ffffff;
   }
 }
 
-.content {
+.sidebar-content {
   margin-left: 200px;
+  margin-bottom: 50px;
   background-color: $white;
 
   h3{
@@ -104,6 +104,30 @@ $white:#ffffff;
   }
 }
 
+.content {
+  margin-top: 2rem;
+
+  .container {
+    margin-top: 2rem;
+    background-color: $light-gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: solid $gray 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    .data-card {
+      flex-grow: 1;
+      border-radius: 10px;
+      padding-top: 50px;
+      p {
+        color: $dark-gray;
+        font-weight: 600;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 700px) {
   .sidebar {
     position: relative;
@@ -115,26 +139,15 @@ $white:#ffffff;
     align-items: center;
     justify-content: center;
   }
-  div.content {
+  div.sidebar-content {
     margin-left: 0;
+  }
+
+  #custom-flex {
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-  .sidebar a {
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-  div.content {
-    margin-left: 0;
-  }
-}
 
 .chip {
   display: flex;
@@ -167,6 +180,22 @@ $white:#ffffff;
     height: 50px;
     width: 50px;
     border-radius: 50%;
+  }
+}
+
+.chip-card-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  border-radius: 15px;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  p {
+    border-bottom: 2px solid $gray;
   }
 }
 
