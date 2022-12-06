@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://node-jwt-todo-api.herokuapp.com/",
+  baseURL: "http://157.230.24.89:8080/",
   headers: {
     "Content-Type": "application/json"
   }
