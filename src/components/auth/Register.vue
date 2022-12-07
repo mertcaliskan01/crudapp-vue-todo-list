@@ -1,97 +1,77 @@
 <template>
-  <div class="container-fluid ">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-md-8 col-lg-6 col-xl-4">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-          class="img-fluid"
-          alt="Sample image"
-        />
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 wrapper fadeInDown">
-        <div class="container ">
-          <div class="card bg-dark text-white" style="border-radius: 1rem">
-            <div class="card-body p-5 text-center">
-                <h2 class="fw-bold mb-2 text-uppercase mb-5">Sign Up</h2>
-                <div>
-                  <Form @submit="handleRegister" :validation-schema="schema">
-                    <div v-if="!successful">
-                      <div class="form-group">
-                        <label for="first_name">Name</label>
-                        <Field
-                          name="first_name"
-                          type="text"
-                          class="form-control"
-                        />
-                        <ErrorMessage
-                          name="first_name"
-                          class="error-feedback text-danger"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="last_name">Surname</label>
-                        <Field
-                          name="last_name"
-                          type="text"
-                          class="form-control"
-                        />
-                        <ErrorMessage
-                          name="last_name"
-                          class="error-feedback text-danger"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email</label>
-                        <Field name="email" type="email" class="form-control" />
-                        <ErrorMessage
-                          name="email"
-                          class="error-feedback text-danger"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <Field
-                          name="password"
-                          type="password"
-                          class="form-control"
-                        />
-                        <ErrorMessage
-                          name="password"
-                          class="error-feedback text-danger"
-                        />
-                      </div>
-
-                      <div class="form-group mt-2">
-                        <button
-                          class="btn btn-primary btn-block"
-                          :disabled="loading"
-                        >
-                          <span
-                            v-show="loading"
-                            class="spinner-border spinner-border-sm"
-                          ></span>
-                          Sign Up
-                        </button>
-                      </div>
-                    </div>
-                  </Form>
-
-                  <div
-                    v-if="message"
-                    class="alert"
-                    :class="successful ? 'alert-success' : 'alert-danger'"
-                  >
-                    {{ message }}
+  <div class="content">
+    <div class="chip">
+      <img src="../../assets/logo.png" alt="Person" />
+      Mtcn
+    </div>
+    <div id="custom-flex" class="container">
+      <admin-section />
+      <div class="data-card">
+        <div class="card-body">
+          <h3>Sign Up</h3>
+          <div>
+            <Form @submit="handleRegister" :validation-schema="schema">
+              <div v-if="!successful">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <Field name="email" type="email" class="form-control" />
+                  <ErrorMessage
+                    name="email"
+                    class="error-feedback text-danger"
+                  />
+                </div>
+                <div class="space-between">
+                  <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <Field name="first_name" type="text" class="form-control" />
+                    <ErrorMessage
+                      name="first_name"
+                      class="error-feedback text-danger"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <Field name="last_name" type="text" class="form-control" />
+                    <ErrorMessage
+                      name="last_name"
+                      class="error-feedback text-danger"
+                    />
                   </div>
                 </div>
-              <div>
-                <p class="mb-0">
-                  <router-link :to="'/login'" class="text-white-50 fw-bold"
-                    >Already have an account?</router-link
-                  >
-                </p>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <Field name="password" type="password" class="form-control" />
+                  <ErrorMessage
+                    name="password"
+                    class="error-feedback text-danger"
+                  />
+                </div>
+
+                <div class="form-group mt-2">
+                  <button class="btn btn-primary btn-block" :disabled="loading">
+                    <span
+                      v-show="loading"
+                      class="spinner-border spinner-border-sm"
+                    ></span>
+                    Sign Up
+                  </button>
+                </div>
               </div>
+            </Form>
+
+            <div
+              v-if="message"
+              class="alert"
+              :class="successful ? 'alert-success' : 'alert-danger'"
+            >
+              {{ message }}
             </div>
+          </div>
+          <div>
+            <p>
+              <router-link :to="'/login'">Already have an account?</router-link>
+            </p>
           </div>
         </div>
       </div>
@@ -105,11 +85,11 @@ import * as yup from "yup";
 
 export default {
   name: "Register",
-
   components: {
     Form,
     Field,
     ErrorMessage,
+    "admin-section": require("../AdminInfo.vue").default,
   },
   data() {
     const schema = yup.object().shape({

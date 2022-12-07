@@ -9,7 +9,10 @@
 
       <div class="chip-card">
         <img src="../assets/avatar/avatar_01.png" alt="Person" />
-        Mert Çalışkan
+        <div v-if="currentUser">
+        {{ currentUser.first_name }} {{ currentUser.last_name }}
+        </div>
+        
       </div>
 
       <a class="active" href="/"><i class="fa fa-fw fa-phone"></i> Home</a>
@@ -67,7 +70,7 @@ export default {
   data() {
     return {
       todoList: [],
-      title: "Todo List"
+      title: "Todo List",
     };
   },
   methods: {
@@ -85,6 +88,11 @@ export default {
             error.toString();
         }
       );
+    },
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
     },
   },
   mounted() {

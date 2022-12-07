@@ -1,77 +1,57 @@
 <template>
-  <div class="container-fluid">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div class="col-3  col-md-4 ">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-          class="img-fluid"
-          alt="Sample image"
-        />
-      </div>
-      <div class="col-12  col-md-6 wrapper fadeInDown">
-        <div class="container py-5">
-          <div class="card bg-dark text-white" style="border-radius: 1rem">
-            <div class="card-body p-5 text-center">
-                <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-                <p class="text-white-50 mb-5">
-                  Please enter your email and password!
-                </p>
-                <div>
-                  <Form @submit="handleLogin" :validation-schema="schema">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <Field name="email" type="text" class="form-control" />
-                      <ErrorMessage
-                        name="email"
-                        class="error-feedback text-danger"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <Field
-                        name="password"
-                        type="password"
-                        class="form-control"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        class="error-feedback text-danger"
-                      />
-                    </div>
+  <div class="content">
+    <div class="chip">
+      <img src="../../assets/logo.png" alt="Person" />
+      Mtcn
+    </div>
 
-                    <div class="form-group">
-                      <button
-                        class="btn btn-primary btn-block"
-                        :disabled="loading"
-                      >
-                        <span
-                          v-show="loading"
-                          class="spinner-border spinner-border-sm"
-                        ></span>
-                        <span>Login</span>
-                      </button>
-                    </div>
+    <div id="custom-flex" class="container">
+      <admin-section />
 
-                    <div class="form-group">
-                      <div
-                        v-if="message"
-                        class="alert alert-danger"
-                        role="alert"
-                      >
-                        {{ message }}
-                      </div>
-                    </div>
-                  </Form>
-                </div>
-
-              <div>
-                <p class="mb-0">
-                  <router-link :to="'/register'" class="text-white-50 fw-bold"
-                    >Don't have an account?</router-link
-                  >
-                </p>
+      <div class="data-card">
+        <div class="card-body">
+          <h3>Login</h3>
+          <p>Please enter your email and password!</p>
+          <div>
+            <Form @submit="handleLogin" :validation-schema="schema">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <Field name="email" type="text" class="form-control" />
+                <ErrorMessage name="email" class="error-feedback text-danger" />
               </div>
-            </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <Field name="password" type="password" class="form-control" />
+                <ErrorMessage
+                  name="password"
+                  class="error-feedback text-danger"
+                />
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-primary btn-block" :disabled="loading">
+                  <span
+                    v-show="loading"
+                    class="spinner-border spinner-border-sm"
+                  ></span>
+                  <span>Login</span>
+                </button>
+              </div>
+
+              <div class="form-group">
+                <div v-if="message" class="alert alert-danger" role="alert">
+                  {{ message }}
+                </div>
+              </div>
+            </Form>
+          </div>
+
+          <div>
+            <p>
+              <router-link :to="'/register'"
+                >Don't have an account?</router-link
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -89,6 +69,7 @@ export default {
     Form,
     Field,
     ErrorMessage,
+    "admin-section": require("../AdminInfo.vue").default,
   },
   data() {
     const schema = yup.object().shape({
