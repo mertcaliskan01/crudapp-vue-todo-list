@@ -5,15 +5,8 @@
       Mtcn
     </div>
     <div id="custom-flex" class="container">
-      <div class="data-card">
-        <div class="card-body chip-card-vertical">
-          <img src="../../assets/avatar/avatar_01.png" alt="Person" />
-          <strong>Mert Çalışkan</strong>
-          <p>Software Developer</p>
-          <strong>Count</strong>
-          <p>15</p>
-        </div>
-      </div>
+      <user-section />
+
       <div class="data-card">
         <div class="card-body">
           <div v-if="!submitted">
@@ -76,6 +69,7 @@ export default {
     Form,
     Field,
     ErrorMessage,
+    "user-section": require("../User.vue").default,
   },
   data() {
     const schema = yup.object().shape({

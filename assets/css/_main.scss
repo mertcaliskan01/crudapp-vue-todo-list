@@ -2,10 +2,10 @@ $light-gray: #f3f3f3;
 $gray: #ebeaea;
 $dark-gray: #494949;
 $blue: rgb(43, 82, 187);
-$white:#ffffff;
+$white: #ffffff;
 
-.gradient-custom {
-  background: $gray;  
+.custom-background {
+  background: $gray;
 }
 
 .sidebar {
@@ -13,7 +13,9 @@ $white:#ffffff;
   position: fixed;
   overflow-x: hidden;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  overflow-y: auto;
+  max-height: calc(100vh - 5rem);
   background-color: $gray;
 
   a {
@@ -52,7 +54,7 @@ $white:#ffffff;
   margin-bottom: 50px;
   background-color: $white;
 
-  h3{
+  h3 {
     margin-top: 50px;
   }
 
@@ -128,27 +130,6 @@ $white:#ffffff;
   }
 }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-  .sidebar a {
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-  div.sidebar-content {
-    margin-left: 0;
-  }
-
-  #custom-flex {
-    flex-direction: column;
-  }
-}
-
-
 .chip {
   display: flex;
   flex-direction: row;
@@ -187,7 +168,6 @@ $white:#ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: start;
   border-radius: 15px;
   img {
     height: 50px;
@@ -225,21 +205,10 @@ $white:#ffffff;
   height: 30px;
 }
 
-@keyframes point {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(0.125em);
-  }
-}
-
-
-.btn-right{
+.btn-right {
   float: right;
   padding: 10px;
 }
-
 
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

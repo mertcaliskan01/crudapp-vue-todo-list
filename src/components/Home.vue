@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="custom-background">
     <div class="sidebar">
       <div class="chip">
         <img src="../assets/logo.png" alt="Person" />

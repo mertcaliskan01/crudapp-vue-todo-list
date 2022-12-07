@@ -1,15 +1,13 @@
 <template>
-  <div class="container-fluid fadeInDown ">
-    <div class="container py-5">
-      <div class="card bg-dark text-white" style="border-radius: 1rem">
-        <div class="card-body p-5 text-center">
-          <h3>
-            <strong>Edit Task</strong>
-          </h3>
-        </div>
-      </div>
+  <div class="content">
+    <div class="chip">
+      <img src="../../assets/logo.png" alt="Person" />
+      Mtcn
+    </div>
 
-      <div class="card bg-dark text-white mt-5 p-5">
+    <div id="custom-flex" class="container">
+      <user-section/>
+      <div class="data-card">
         <div class="card-body">
           <div v-if="currentTask" class="edit-form">
             <h4>Task</h4>
@@ -50,7 +48,6 @@
                     }}</label
                   >
                 </div>
-
               </div>
             </form>
 
@@ -145,6 +142,9 @@ export default {
     showTasks() {
       this.$router.push({ name: "tasks" });
     },
+  },
+  components: {
+    "user-section": require("../User.vue").default,
   },
   mounted() {
     this.message = "";
