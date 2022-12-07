@@ -145,6 +145,7 @@ export default {
           this.loading = false;
         },
         () => {
+          this.loading = false;
           this.message = "An error occurred please try again later";
         }
       );
