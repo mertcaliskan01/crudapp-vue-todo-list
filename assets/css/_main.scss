@@ -4,7 +4,7 @@
   background: $gray;
 }
 
-.form-control{
+.form-control {
   padding: 1em;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -15,9 +15,18 @@
   padding: 10px;
 }
 
+.low-opacity {
+  opacity: 0.5;
+  color: $black;
+}
+
+.medium-opacity {
+  opacity: 0.8;
+  color: $black;
+}
 
 .sidebar {
-  width: 200px;
+  width: 240px;
   position: fixed;
   overflow-x: hidden;
   padding-top: 20px;
@@ -29,7 +38,7 @@
   a {
     display: block;
     color: black;
-    padding: 3px;
+    padding: 5px;
     padding-left: 8px;
     text-decoration: none;
   }
@@ -43,27 +52,75 @@
   }
 
   i {
-    margin-right: 4px;
+    margin: 4px;
+    font-size: 1.2em;
   }
 
   a.active {
-    background-color: #91b7da;
+    background-color: $light-blue;
     color: $blue;
   }
 
   a:hover:not(.active) {
-    background-color: #91b7da;
+    background-color: $light-blue;
     color: $blue;
   }
 }
 
 .sidebar-content {
-  margin-left: 200px;
+  margin-left: 240px;
   margin-bottom: 50px;
   background-color: $white;
 
-  h3 {
-    margin-top: 50px;
+  .data-card-header {
+    flex-direction: column;
+    padding: 1em;
+
+    h3 {
+      padding: 4px;
+      margin-top: 20px;
+    }
+
+    h4 {
+      opacity: 0.5;
+      padding: 4px;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+
+    h4.active {
+      opacity: 1;
+      border-radius: 10px 10px 0 0;
+      background-color: $light-blue;
+      color: $blue;
+    }
+
+    h5 {
+      opacity: 0.5;
+      padding: 4px;
+      margin-top: 20px;
+    }
+
+    h5.active {
+      opacity: 1;
+      color: $blue;
+      border-bottom: 2px solid $blue;
+    }
+
+    .top-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 1.5em;
+      border-bottom: 2px solid $light-gray;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 1.5em;
+    }
   }
 
   .container {
@@ -85,30 +142,41 @@
 
       h3 {
         color: $dark-gray;
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: 600;
         line-height: 1;
         padding-bottom: 0.5em;
-        margin: 0 0 0.142857143em;
-        border-bottom: 2px solid $gray;
-        transition: color 0.45s ease, border 0.45s ease;
+        margin: 1em;
       }
 
       h4 {
         color: $dark-gray;
         text-transform: uppercase;
-        font-size: 1.125em;
-        font-weight: 700;
+        font-size: 1em;
+        font-weight: 600;
         line-height: 1;
-        letter-spacing: 0.1em;
-        margin: 1.777777778em;
+        margin: 1em;
         transition: color 0.45s ease;
       }
 
       p {
         color: $dark-gray;
+        margin: 1em;
         font-weight: 600;
         line-height: 1.8;
+      }
+
+      .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1.5em;
+        border-bottom: 2px solid $gray;
+  
+        i {
+          color: $blue;
+          margin: 0.5em;
+        }
       }
     }
   }
@@ -130,7 +198,7 @@
       border-radius: 10px;
       padding-top: 50px;
       margin: 10px;
-      
+
       p {
         color: $dark-gray;
         font-weight: 400;
@@ -185,13 +253,13 @@
   }
 }
 
-.space-between{
+.space-between {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 1.5em;
 
-  .form-group{
+  .form-group {
     flex-grow: 1;
   }
 }
@@ -207,7 +275,7 @@
     border-radius: 50%;
   }
 
-  h3{
+  h3 {
     padding-top: 10px;
   }
 }
@@ -239,5 +307,5 @@
   height: 30px;
 }
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");

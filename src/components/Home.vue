@@ -10,37 +10,48 @@
       <div class="chip-card">
         <img src="../assets/avatar/avatar_01.png" alt="Person" />
         <div v-if="currentUser">
-        {{ currentUser.first_name }} {{ currentUser.last_name }}
+          {{ currentUser.first_name }} {{ currentUser.last_name }}
         </div>
-        
       </div>
-
-      <a class="active" href="/"><i class="fa fa-fw fa-phone"></i> Home</a>
-      <a href="/"><i class="fa fa-fw fa-calendar"></i> Streams</a>
-      <a href="/"><i class="fa fa-fw fa-play"></i> Series</a>
-      <a href="/"><i class="fa fa-fw fa-user"></i> Subscriptions</a>
-      <a href="/"><i class="fa fa-fw fa-newspaper-o"></i> Messages</a>
+      
+      <a class="active" href="/"><i class="bi bi-telephone"></i> Calls</a>
+      <a href="/"><i class="bi bi-calendar-heart"></i> Streams</a>
+      <a href="/"><i class="bi bi-collection-play"></i> Series</a>
+      <a href="/"><i class="bi bi-people"></i> Subscriptions</a>
+      <a href="/"><i class="bi bi-chat-left-text"></i> Messages</a>
 
       <h5>ACCOUNT</h5>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Profile</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Availability</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Payout</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Calendar</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Notifications</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Discount codes</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Payment</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Settings</a>
+      <a href="/"><i class="bi bi-person"></i> Profile</a>
+      <a href="/"><i class="bi bi-card-checklist"></i> Availability</a>
+      <a href="/"><i class="bi bi-wallet"></i> Payout</a>
+      <a href="/"><i class="bi bi-calendar"></i> Calendar</a>
+      <a href="/"><i class="bi bi-bell"></i> Notifications</a>
+      <a href="/"><i class="bi bi-ticket"></i> Discount codes</a>
+      <a href="/"><i class="bi bi-credit-card"></i> Payment</a>
+      <a href="/"><i class="bi bi-gear"></i> Settings</a>
 
       <h5>SUPPORT</h5>
-      <a href="/"><i class="fa fa-fw fa-home"></i> FAQs</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> What's New</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Give Feedback</a>
-      <a href="/"><i class="fa fa-fw fa-home"></i> Logout</a>
+      <a href="/"><i class="bi bi-patch-que"></i> FAQs</a>
+      <a href="/"><i class="bi bi-gift"></i> What's New</a>
+      <a href="/"><i class="bi bi-envelope-paper"></i> Give Feedback</a>
+      <a href="/"><i class="bi bi-box-arrow-right"></i> Logout</a>
     </div>
 
     <div class="sidebar-content">
       <div class="container">
-        <h3>{{ this.title }}</h3>
+
+        <div class="data-card-header">
+          <h3>{{ this.title }}</h3>
+          <div class="top-header">
+            <h4 class="active">Bookings</h4>
+            <h4>Services</h4>
+          </div>
+          <div class="header">
+            <h5>New</h5>
+            <h5 class="active">Upcoming {{ todoList.length }}</h5>
+            <h5>Post</h5>
+          </div>
+        </div>
 
         <section
           class="page-contain"
@@ -52,9 +63,15 @@
               :to="'/editTask/' + todo.id"
               class="btn-right fa fa-bars"
             ></router-link>
+            <div class="header">
+              <h3><i class="fa fa-fw fa-calendar"></i>Thu, 28 Jul, 2022</h3>
+              <h3><i class="fa fa-fw fa-calendar"></i>10:15AM - 10:30AM</h3>
+              <h3><i class="fa fa-fw fa-calendar"></i>$20</h3>
+            </div>
 
-            <h3>{{ todo.title }}</h3>
-            <h4>{{ todo.description }}</h4>
+            <p>{{ todo.title }} - Quick chat (15 min)</p>
+            <p class="low-opacity">What would you like the call to be about?</p>
+            <p class="medium-opacity">{{ todo.description }}</p>
             <p v-if="todo.completed">Completed</p>
             <p v-else>Not Completed</p>
           </div>
@@ -70,7 +87,7 @@ export default {
   data() {
     return {
       todoList: [],
-      title: "Todo List",
+      title: "1:1 Calls",
     };
   },
   methods: {
