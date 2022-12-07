@@ -1,0 +1,19 @@
+@media screen and (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .sidebar a {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  div.sidebar-content {
+    margin-left: 0;
+  }
+
+  #custom-flex {
+    flex-direction: column;
+  }
+}

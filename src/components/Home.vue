@@ -1,27 +1,95 @@
+<!-- Please remove this file from your project -->
 <template>
-  <div class="container-fluid fadeInDown">
-    <div class="container py-5">
-      <div class="card bg-dark text-white" style="border-radius: 1rem">
-        <div class="card-body p-5 text-center">
-          <h3>
-                <strong>{{ content }}</strong>
-              </h3>
-        </div>
+  <div class="custom-background">
+    <div class="sidebar">
+      <div class="chip">
+        <img src="../assets/logo.png" alt="Person" />
+        Mtcn
+      </div>
+
+      <div class="chip-card">
+        <img src="../assets/avatar/avatar_01.png" alt="Person" />
+        Mert Çalışkan
+      </div>
+
+      <a class="active" href="/"><i class="fa fa-fw fa-phone"></i> Home</a>
+      <a href="/"><i class="fa fa-fw fa-calendar"></i> Streams</a>
+      <a href="/"><i class="fa fa-fw fa-play"></i> Series</a>
+      <a href="/"><i class="fa fa-fw fa-user"></i> Subscriptions</a>
+      <a href="/"><i class="fa fa-fw fa-newspaper-o"></i> Messages</a>
+
+      <h5>ACCOUNT</h5>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Profile</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Availability</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Payout</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Calendar</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Notifications</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Discount codes</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Payment</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Settings</a>
+
+      <h5>SUPPORT</h5>
+      <a href="/"><i class="fa fa-fw fa-home"></i> FAQs</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> What's New</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Give Feedback</a>
+      <a href="/"><i class="fa fa-fw fa-home"></i> Logout</a>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="container">
+        <h3>{{ this.title }}</h3>
+
+        <section
+          class="page-contain"
+          v-for="(todo, index) in todoList"
+          :key="index"
+        >
+          <div class="data-card">
+            <router-link
+              :to="'/editTask/' + todo.id"
+              class="btn-right fa fa-bars"
+            ></router-link>
+
+            <h3>{{ todo.title }}</h3>
+            <h4>{{ todo.description }}</h4>
+            <p v-if="todo.completed">Completed</p>
+            <p v-else>Not Completed</p>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </template>
 
-<script>
 
+<script>
 export default {
-  name: "Home",
   data() {
     return {
-      content: "Home Page",
+      todoList: [],
+      title: "Todo List"
     };
   },
+  methods: {
+    retrieveTutorials() {
+      this.$store.dispatch("task/getAll").then(
+        (response) => {
+          this.todoList = response.data;
+        },
+        (error) => {
+          this.content =
+            (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+            error.message ||
+            error.toString();
+        }
+      );
+    },
+  },
   mounted() {
+    this.retrieveTutorials();
   },
 };
 </script>
+

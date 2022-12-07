@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
       <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
-        aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
@@ -60,7 +59,7 @@
       </div>
     </nav>
 
-    <div class="vh-100 gradient-custom">
+    <div >
       <router-view />
       <footer-section />
     </div>
@@ -91,3 +90,8 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+
+</style>

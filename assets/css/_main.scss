@@ -1,0 +1,210 @@
+@import "variables";
+
+.custom-background {
+  background: $gray;
+}
+
+.sidebar {
+  width: 200px;
+  position: fixed;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  overflow-y: auto;
+  max-height: calc(100vh - 5rem);
+  background-color: $gray;
+
+  a {
+    display: block;
+    color: black;
+    padding: 3px;
+    padding-left: 8px;
+    text-decoration: none;
+  }
+
+  h5 {
+    padding: 2px;
+    margin: 5px;
+    padding-left: 16px;
+    color: grey;
+    border-bottom: 1px solid gray;
+  }
+
+  i {
+    margin-right: 4px;
+  }
+
+  a.active {
+    background-color: #91b7da;
+    color: $blue;
+  }
+
+  a:hover:not(.active) {
+    background-color: #91b7da;
+    color: $blue;
+  }
+}
+
+.sidebar-content {
+  margin-left: 200px;
+  margin-bottom: 50px;
+  background-color: $white;
+
+  h3 {
+    margin-top: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .page-contain {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .data-card {
+      flex-direction: column;
+      border-radius: 10px;
+      border: solid $gray 2px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      padding: 1.75em 1.5em;
+      margin: 15px;
+
+      h3 {
+        color: $dark-gray;
+        font-size: 1.5em;
+        font-weight: 600;
+        line-height: 1;
+        padding-bottom: 0.5em;
+        margin: 0 0 0.142857143em;
+        border-bottom: 2px solid $gray;
+        transition: color 0.45s ease, border 0.45s ease;
+      }
+
+      h4 {
+        color: $dark-gray;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        margin: 1.777777778em;
+        transition: color 0.45s ease;
+      }
+
+      p {
+        color: $dark-gray;
+        font-weight: 600;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+.content {
+  margin-top: 2rem;
+
+  .container {
+    margin-top: 2rem;
+    background-color: $light-gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: solid $gray 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    .data-card {
+      flex-grow: 1;
+      border-radius: 10px;
+      padding-top: 50px;
+      p {
+        color: $dark-gray;
+        font-weight: 600;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+.chip {
+  display: flex;
+  flex-direction: row;
+  padding-left: 25px;
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.chip-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.chip-card-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  p {
+    border-bottom: 2px solid $gray;
+  }
+}
+
+/* Checkbox */
+
+.checkbox-lg .form-check-input {
+  top: 0.8rem;
+  scale: 1.4;
+  margin-right: 0.7rem;
+}
+
+.checkbox-lg .form-check-label {
+  padding-top: 13px;
+}
+
+.checkbox-xl .form-check-input {
+  top: 1.2rem;
+  scale: 1.7;
+  margin-right: 0.8rem;
+}
+
+.checkbox-xl .form-check-label {
+  padding-top: 19px;
+}
+.big-checkbox {
+  width: 60px;
+  height: 30px;
+}
+
+.btn-right {
+  float: right;
+  padding: 10px;
+}
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
