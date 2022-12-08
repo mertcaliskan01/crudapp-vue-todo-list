@@ -13,7 +13,7 @@
           {{ currentUser.first_name }} {{ currentUser.last_name }}
         </div>
       </div>
-      
+
       <a class="active" href="/"><i class="bi bi-telephone"></i> Calls</a>
       <a href="/"><i class="bi bi-calendar-heart"></i> Streams</a>
       <a href="/"><i class="bi bi-collection-play"></i> Series</a>
@@ -39,7 +39,6 @@
 
     <div class="sidebar-content">
       <div class="container">
-
         <div class="data-card-header">
           <h3>{{ this.title }}</h3>
           <div class="top-header">
@@ -53,20 +52,21 @@
           </div>
         </div>
 
-        <section
+        <div
           class="page-contain"
           v-for="(todo, index) in todoList"
           :key="index"
         >
           <div class="data-card">
-            <router-link
-              :to="'/editTask/' + todo.id"
-              class="btn-right fa fa-bars"
-            ></router-link>
-            <div class="header">
-              <h3><i class="fa fa-fw fa-calendar"></i>Thu, 28 Jul, 2022</h3>
-              <h3><i class="fa fa-fw fa-calendar"></i>10:15AM - 10:30AM</h3>
-              <h3><i class="fa fa-fw fa-calendar"></i>$20</h3>
+            <div id="custom-flex" class="header">
+              <h3><i class="bi bi-calendarr"></i>Thu, 28 Jul, 2022</h3>
+              <h3><i class="bi bi-calendar"></i>10:15AM - 10:30AM</h3>
+              <h3><i class="bi bi-calendar"></i>$20</h3>
+              <div>
+                <router-link :to="'/editTask/' + todo.id"
+                  ><i class="bi bi-three-dots"></i
+                ></router-link>
+              </div>
             </div>
 
             <p>{{ todo.title }} - Quick chat (15 min)</p>
@@ -75,7 +75,7 @@
             <p v-if="todo.completed">Completed</p>
             <p v-else>Not Completed</p>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   </div>
