@@ -7,7 +7,7 @@
 .form-control {
   padding: 1em;
   border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: $box-shadow 0px 8px 24px;
 }
 
 .low-opacity {
@@ -24,7 +24,6 @@
   width: 240px;
   position: fixed;
   overflow-x: hidden;
-  padding-top: 20px;
   padding-bottom: 30px;
   overflow-y: auto;
   max-height: calc(100vh - 5rem);
@@ -131,7 +130,7 @@
       flex-direction: column;
       border-radius: 10px;
       border: solid $gray 2px;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: $box-shadow 0px 8px 24px;
       padding: 1.75em 1.5em;
       margin: 15px;
 
@@ -187,16 +186,16 @@
 }
 
 .content {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 
   .container {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
     background-color: $light-gray;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     border: solid $gray 2px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: $box-shadow 0px 8px 24px;
     .data-card {
       flex-grow: 1;
       border-radius: 10px;
@@ -249,7 +248,7 @@
   padding: 8px;
   margin: 8px;
   border-radius: 15px;
-  background-color: #ffffff;
+  background-color: $white;
   img {
     height: 50px;
     width: 50px;
