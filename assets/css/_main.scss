@@ -10,11 +10,6 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.btn-right {
-  float: right;
-  padding: 10px;
-}
-
 .low-opacity {
   opacity: 0.5;
   color: $black;
@@ -172,10 +167,19 @@
         justify-content: flex-start;
         gap: 1.5em;
         border-bottom: 2px solid $gray;
-  
+
+        h3 {
+          flex-grow: 1;
+        }
+
         i {
           color: $blue;
           margin: 0.5em;
+        }
+
+        div {
+          line-height: 1;
+          margin: 1em;
         }
       }
     }
